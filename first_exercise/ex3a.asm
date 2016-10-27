@@ -27,6 +27,7 @@ LOOP:
     beq  $a0, $a1, L1            # if ( $a0 == $a1 ) goto L1;
     add  $v0, $v0, $a0           # res += n;
     add  $a0, $a0, $s1           # $a0 += 1;
+    j    LOOP                    # unconditional jump to LOOP address
 
 L1:
     add  $v0, $v0, $a0           # res += n;
