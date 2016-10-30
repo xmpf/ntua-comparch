@@ -16,7 +16,7 @@
 
 SUM1:                            # Initialization
     add  $v0, $zero, $zero       # result = 0;
-    addi $s1, $zero, 1           # $s1 = 1; constantly 1 register
+    ori  $s1, $zero, 1           # $s1 = 1; constantly 1 register
     lw   $a0, 0($sp)             # load first argument
     lw   $a1, 4($sp)             # load second argument
     slt  $t0, $a1, $a0           # check if $a1 < $a0

@@ -19,8 +19,8 @@
 
     lw      $a0, 0($sp)         # load arguments from stack
     lw      $a1, 4($sp)         # into registers
-    addi    $s0, $zero, 1       # constantly register equal to one (incrementing)
-    addi    $s1, $zero, 8       # constantly register equal to eight (offset)
+    ori     $s0, $zero, 1       # constantly register equal to one (incrementing)
+    ori     $s1, $zero, 8       # constantly register equal to eight (offset)
 SUM2:
     addi    $sp, $sp, -8        # make room for return_address and return_result
     sw      $ra, 4($sp)         # store return_address on stack
