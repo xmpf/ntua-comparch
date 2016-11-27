@@ -33,7 +33,8 @@ INIT_SECTION:					# initialization
 
 LOOP_0:
 	add		$a0, $a0, $t0		# $a0  = &($a0 + 4)
-	add.s	$f0, $f0, 0($a0)	# $f0 += *($a0 + 0)
+	lwc1	$f2, 0($a0)			# load contents of MEM[$a0] into $f2 register
+	add.s	$f0, $f0, $f2		# $f0 += (float)(*$a0)
 	add		$t1, $t1, $s0		# count++;
 	bne		$t1, $a1, LOOP_0	# if (count != N) goto LOOP_0;
 	div.s   $f0, $f0, $f1		# sum = (float)(sum / N.0);
